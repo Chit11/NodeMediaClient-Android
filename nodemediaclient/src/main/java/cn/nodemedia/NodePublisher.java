@@ -103,11 +103,13 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
                 @Override
                 public void onAudioFocusChange(int focusChange) {
                     if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
+                        console.printf("check for audio focus loss");
                         for (NodePublisher publisher : publishers) {
                             //麦克风静音
                             publisher.jniAudioMuted(true);
                         }
                     } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+                         console.printf("check for audio focus gain");
                         for (NodePublisher publisher : publishers) {
                             //麦克风恢复
                             publisher.jniAudioMuted(false);
