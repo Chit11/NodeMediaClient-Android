@@ -203,6 +203,8 @@ public class NodePublisher implements NodeCameraView.NodeCameraViewCallback {
         windowOri = getWindowRotation();
         if (ret == 0) {
             isStartPreview = true;
+            console.printf("check for start in java");
+            console.log("check for start in java");
         }
         return ret;
 
